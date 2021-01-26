@@ -5,21 +5,23 @@ import { createLogger } from 'redux-logger'
 // ---
 
 import { rootReducer } from './reducers'
-import { webScoketBCMiddleware } from './middlewares'
+import { webSocketBCMiddleware } from './middlewares'
 
 // ---
 
-const middlewares = [webScoketBCMiddleware, thunk]
+const middlewares = [webSocketBCMiddleware, thunk]
 
-// if (process.env.NODE_ENV === 'development') {
-// 	let logger = createLogger()
-// 	middlewares.push(logger)
-// }
+if (process.env.NODE_ENV === 'development') {
+	let logger = createLogger()
+	middlewares.push(logger as any)
+}
 
 const initStates = {}
+
+// ---
 
 export const store = createStore(
 	rootReducer,
 	initStates,
-	applyMiddleware(middlewares)
+	applyMiddleware(...middlewares)
 )

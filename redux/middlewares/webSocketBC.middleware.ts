@@ -1,9 +1,8 @@
 import { Middleware } from './middleware'
-import { ActionTypeEnum } from '../actions-enums'
 
 // ---
 
-export const webScoketBCMiddleware: Middleware = ({
+export const webSocketBCMiddleware: Middleware = ({
 	getState,
 	dispatch
 }) => next => action => {

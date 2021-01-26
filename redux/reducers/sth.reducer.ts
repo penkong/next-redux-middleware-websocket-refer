@@ -1,19 +1,27 @@
 import produce from 'immer'
-import { ActionTypeEnum } from '../actions-enums'
+
+// ---
+
+import { STHActionTypeEnum } from '../actions-enums'
 import { SthAction } from '../actions-interface'
+
+// ---
 
 interface INewState {
 	sth: string
 }
 
 const initialState: INewState = {
-	sth: ''
+	sth: 'hellow'
 }
+
+// ---
 
 export const sthReducer = produce(
 	(state: INewState = initialState, action: SthAction) => {
 		switch (action.type) {
-			// case ActionTypeEnum.BUNDLE_CREATED :
+			case STHActionTypeEnum.STH:
+				return { sth: 'this is changed' }
 			default:
 				return state
 		}

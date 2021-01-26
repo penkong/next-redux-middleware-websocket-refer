@@ -1,12 +1,11 @@
-import { ActionTypeEnum } from '../actions-enums'
-import { UpdateCellAction } from '../actions-interface'
+import { STHActionTypeEnum } from '../actions-enums'
+import { ISTHAction } from '../actions-interface'
 
-export const updateCell = (id: string, content: string): UpdateCellAction => {
+// ---
+
+export const sthActionCreator = (): ISTHAction => {
 	return {
-		type: ActionTypeEnum.UPDATE_CELL,
-		payload: {
-			id,
-			content
-		}
+		type: STHActionTypeEnum.STH,
+		payload: 'sth'
 	}
 }

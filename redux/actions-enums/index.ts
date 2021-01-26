@@ -1,1 +1,1 @@
-export * from './sthActionType.enum'
+export * from './sth-action-type.enum'
