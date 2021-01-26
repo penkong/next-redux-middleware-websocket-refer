@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 // ---
 
 import { useActions, useTypedSelector } from '../hooks/'
+import { sthSelector } from '../redux'
 
 // ---
 
@@ -16,10 +17,15 @@ interface AppProps extends PassingProps, GetServerSideProps {}
 
 const Home: NextPage<AppProps, PassingProps> = props => {
 	const { sthActionCreator } = useActions()
-	const stated = useTypedSelector(state => state.sth.sth)
+
+	const stated = useTypedSelector(sthSelector)
+
 	useEffect(() => {
 		sthActionCreator()
-	}, [stated])
+	}, [])
+
+	if (stated) console.log(stated)
+
 	return (
 		<div>
 			<Head>
