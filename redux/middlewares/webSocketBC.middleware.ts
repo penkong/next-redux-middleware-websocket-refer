@@ -1,5 +1,5 @@
 import { Middleware } from './middleware'
-import { ActionTypeEnum } from '../action-enums'
+import { ActionTypeEnum } from '../actions-enums'
 
 // ---
 

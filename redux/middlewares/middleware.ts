@@ -1,5 +1,5 @@
 import { RootState } from '../reducers'
-import { Action } from '../actions-interface'
+import { SthAction } from '../actions-interface/sth.actionInterface'
 
 interface MiddlewareAPI<S, A> {
 	getState(): S
@@ -9,4 +9,4 @@ interface _Middleware<S, A> {
 	(api: MiddlewareAPI<S, A>): (next: (action: A) => void) => (action: A) => void
 }
 
-export type Middleware = _Middleware<RootState, Action>
+export type Middleware = _Middleware<RootState, SthAction>

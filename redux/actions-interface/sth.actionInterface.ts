@@ -1,9 +1,8 @@
-import { ActionType } from '../action-enums'
-import { CellTypes } from '../cell'
+import { ActionTypeEnum } from '../actions-enums'
 
 export type Direction = 'up' | 'down'
 export interface MoveCellAction {
-	type: ActionType.MOVE_CELL
+	type: ActionTypeEnum.MOVE_CELL
 	payload: {
 		id: string
 		direction: Direction
@@ -11,20 +10,20 @@ export interface MoveCellAction {
 }
 
 export interface DeleteCellAction {
-	type: ActionType.DELETE_CELL
+	type: ActionTypeEnum.DELETE_CELL
 	payload: string
 }
 
 export interface InsertCellAfterAction {
-	type: ActionType.INSERT_CELL_AFTER
+	type: ActionTypeEnum.INSERT_CELL_AFTER
 	payload: {
 		id: string | null
-		type: CellTypes
+		type: any
 	}
 }
 
 export interface UpdateCellAction {
-	type: ActionType.UPDATE_CELL
+	type: ActionTypeEnum.UPDATE_CELL
 	payload: {
 		id: string
 		content: string
@@ -32,7 +31,7 @@ export interface UpdateCellAction {
 }
 
 export interface BundleCreatedAction {
-	type: ActionType.BUNDLE_CREATED
+	type: ActionTypeEnum.BUNDLE_CREATED
 	payload: {
 		cellId: string
 		bundle: {
@@ -42,7 +41,7 @@ export interface BundleCreatedAction {
 	}
 }
 
-export type Action =
+export type SthAction =
 	| MoveCellAction
 	| DeleteCellAction
 	| InsertCellAfterAction
