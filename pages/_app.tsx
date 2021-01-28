@@ -1,12 +1,15 @@
 // --- Packages
 
+import 'tailwindcss/tailwind.css'
+
 import { AppContext, AppProps } from 'next/app'
 import { Provider } from 'react-redux'
-import 'tailwindcss/tailwind.css'
+import { useEffect } from 'react'
 
 // --- Locals
 
 import { store } from '../redux/store'
+import { useActions } from '../hooks/'
 import { AppInitialProps } from 'next/dist/next-server/lib/utils'
 
 // ---
@@ -18,11 +21,13 @@ interface IProps extends IPassingProps, AppProps {}
 
 // ---
 
-const MyApp = ({ Component, pageProps, router }: IProps) => (
-	<Provider store={store}>
-		<Component {...pageProps} />
-	</Provider>
-)
+const MyApp = ({ Component, pageProps, router }: IProps) => {
+	return (
+		<Provider store={store}>
+			<Component {...pageProps} />
+		</Provider>
+	)
+}
 
 // ---
 

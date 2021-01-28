@@ -1,9 +1,9 @@
 import { RootState } from '../reducers'
-import { SthAction } from '../actions-interface'
+import { SthAction, socketAction } from '../actions-interface'
 
 // ---
 
-export type Action = SthAction
+export type Action = SthAction | socketAction
 
 interface MiddlewareAPI<S, A> {
 	getState(): S

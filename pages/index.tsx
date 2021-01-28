@@ -16,11 +16,12 @@ interface AppProps extends PassingProps, GetServerSideProps {}
 // ---
 
 const Home: NextPage<AppProps, PassingProps> = props => {
-	const { sthActionCreator } = useActions()
+	const { sthActionCreator, bcRequestSessionActionCreator } = useActions()
 
 	const stated = useTypedSelector(sthSelector)
 
 	useEffect(() => {
+		bcRequestSessionActionCreator()
 		sthActionCreator()
 	}, [])
 

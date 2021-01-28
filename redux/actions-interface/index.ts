@@ -1,1 +1,2 @@
-export * from './sth.actionInterface'
+export * from './sth.action-interface'
+export * from './webSocketBC.action-interface'
