@@ -6,11 +6,11 @@ import { createRouterMiddleware } from 'connected-next-router'
 // ---
 
 import { rootReducer } from './reducers'
-import { webSocketBCMiddleware } from './middlewares'
+import { webSocketBCMiddleware2 } from './middlewares'
 
 // ---
 
-const middlewares = [createRouterMiddleware(), webSocketBCMiddleware, thunk]
+const middlewares = [createRouterMiddleware(), webSocketBCMiddleware2, thunk]
 
 if (process.env.NODE_ENV === 'development') {
 	let logger = createLogger()
@@ -26,3 +26,5 @@ export const store = createStore(
 	initStates,
 	applyMiddleware(...middlewares)
 )
+
+export type RootStoreType = typeof store

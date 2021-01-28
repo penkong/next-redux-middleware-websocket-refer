@@ -15,3 +15,15 @@ export const rootReducer = combineReducers({
 })
 
 export type RootState = ReturnType<typeof rootReducer>
+
+// {
+// 	"command": "request_session",
+// 	"params": {
+// 	"site_id": 1,
+// 	"language": "arm",
+// 	// optional
+// 	"source": 1, // source field
+// 	"terminal": 123 // terminal field
+// 	"afec": "Art3sd3dsAD21Bn..." // Device fingerprint
+// 	}
+// 	}
