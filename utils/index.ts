@@ -1,1 +1,1 @@
-export * from './bcSocket.service'
+export const s = 's'
