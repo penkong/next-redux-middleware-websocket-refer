@@ -6,11 +6,11 @@ import { createRouterMiddleware } from 'connected-next-router'
 // ---
 
 import { rootReducer } from './reducers'
-import { webSocketBCMiddleware2 } from './middlewares'
+import { webSocketBCMiddleware } from './middlewares'
 
 // ---
 
-const middlewares = [createRouterMiddleware(), webSocketBCMiddleware2, thunk]
+const middlewares = [createRouterMiddleware(), webSocketBCMiddleware(), thunk]
 
 if (process.env.NODE_ENV === 'development') {
 	let logger = createLogger()

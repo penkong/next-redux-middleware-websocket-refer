@@ -1,9 +1,10 @@
 import { RootState } from '../reducers'
 import { SthAction, socketAction } from '../actions-interface'
+import { LocationChangeAction } from 'connected-next-router/actions'
 
 // ---
 
-export type Action = SthAction | socketAction
+export type Action = SthAction | socketAction | LocationChangeAction
 
 interface MiddlewareAPI<S, A> {
 	getState(): S
